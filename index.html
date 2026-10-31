@@ -10,30 +10,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="site">
-  <div class="wrap nav-bar">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">ISA</span>
-      <span class="brand-text">Institute of Science &amp; Art<small>Research &amp; Residency</small></span>
-    </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav id="mainNav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="science.html">Science</a></li>
-        <li><a href="art.html">Art</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<div id="site-header"></div>
 
 <div class="hero">
   <div class="wrap">
@@ -174,13 +155,8 @@
   </div>
 </section>
 
-<footer class="site">
-  <div class="wrap">
-    <span>&copy; <span id="year">2026</span> Institute of Science and Art.</span>
-    <span><a href="contact.html">hello@institute-science-art.org</a></span>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
-<script src="js/main.js"></script>
+<script src="components.js"></script>
 </body>
 </html>

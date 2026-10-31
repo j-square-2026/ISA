@@ -1,273 +1,41 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Institute of Science and Art</title>
-<meta name="description" content="The Institute of Science and Art is a research and residency centre where scientific inquiry and artistic practice are pursued as one discipline.">
+<meta name="description" content="The Institute of Science and Art is a research centre and residency where scientific inquiry and artistic practice are pursued as one discipline.">
 <meta name="theme-color" content="#10151c">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --ink:#10151c;
-    --ink-soft:#2b3542;
-    --muted:#5c6875;
-    --paper:#f7f4ed;
-    --paper-2:#ffffff;
-    --accent:#bf5a24;
-    --accent-soft:#e8d9c9;
-    --line:rgba(16,21,28,.13);
-    --max:1140px;
-    --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
-    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family:var(--sans);
-    font-weight:400;
-    color:var(--ink-soft);
-    background:var(--paper);
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-  img{max-width:100%;display:block}
-  a{color:inherit}
-
-  h1,h2,h3{
-    font-family:var(--serif);
-    font-weight:600;
-    color:var(--ink);
-    line-height:1.12;
-    letter-spacing:-.01em;
-    margin:0 0 .5em;
-  }
-  h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700}
-  h2{font-size:clamp(1.9rem,3.4vw,2.9rem)}
-  h3{font-size:1.35rem;letter-spacing:0}
-  p{margin:0 0 1.1em}
-
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-  .eyebrow{
-    font-size:.72rem;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    font-weight:600;
-    color:var(--accent);
-    margin:0 0 1rem;
-  }
-  .lede{font-size:1.1rem;color:var(--muted);max-width:62ch}
-
-  /* ---------- Header ---------- */
-  header.site{
-    position:sticky;top:0;z-index:50;
-    background:rgba(247,244,237,.88);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-bar{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:24px;padding:14px 0;
-  }
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .brand-mark{
-    width:38px;height:38px;flex:0 0 38px;
-    border:1.5px solid var(--ink);border-radius:50%;
-    display:grid;place-items:center;
-    font-family:var(--serif);font-size:.95rem;font-weight:700;
-    color:var(--ink);letter-spacing:.02em;
-  }
-  .brand-text{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.15}
-  .brand-text small{
-    display:block;font-family:var(--sans);font-size:.62rem;font-weight:500;
-    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
-  }
-
-  nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
-  nav a{
-    text-decoration:none;font-size:.86rem;font-weight:500;
-    color:var(--ink-soft);padding:6px 0;position:relative;
-  }
-  nav a::after{
-    content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;
-    background:var(--accent);transition:width .25s ease;
-  }
-  nav a:hover::after,nav a:focus-visible::after{width:100%}
-
-  .menu-btn{
-    display:none;background:none;border:1px solid var(--line);
-    border-radius:8px;padding:8px 11px;cursor:pointer;color:var(--ink);
-  }
-  .menu-btn span{display:block;width:20px;height:1.6px;background:currentColor;margin:4px 0}
-
-  /* ---------- Hero ---------- */
-  .hero{
-    background:
-      radial-gradient(1200px 500px at 78% -10%, rgba(191,90,36,.22), transparent 62%),
-      radial-gradient(900px 420px at 8% 108%, rgba(126,163,168,.18), transparent 60%),
-      var(--ink);
-    color:#e9e5dc;
-    padding:clamp(76px,11vw,132px) 0 clamp(64px,9vw,104px);
-    position:relative;
-    overflow:hidden;
-  }
-  .hero::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:64px 64px;
-    mask-image:radial-gradient(70% 60% at 50% 40%, #000, transparent 78%);
-  }
-  .hero .wrap{position:relative;z-index:1}
-  .hero h1{color:#fdfbf7;max-width:16ch}
-  .hero p{color:#c3c8ce;font-size:1.12rem;max-width:56ch;margin-top:1.4em}
-  .hero .eyebrow{color:#e0955f}
-
-  .btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:2.2em}
-  .btn{
-    display:inline-block;text-decoration:none;font-size:.86rem;font-weight:600;
-    letter-spacing:.03em;padding:13px 26px;border-radius:100px;
-    transition:transform .18s ease, background .18s ease, color .18s ease;
-  }
-  .btn-primary{background:var(--accent);color:#fff}
-  .btn-primary:hover{background:#a94d1c;transform:translateY(-2px)}
-  .btn-ghost{border:1px solid rgba(255,255,255,.35);color:#f0ece4}
-  .btn-ghost:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
-
-  /* ---------- Generic section ---------- */
-  section{padding:clamp(64px,9vw,110px) 0}
-  .section-head{max-width:64ch;margin-bottom:clamp(36px,5vw,60px)}
-
-  /* ---------- About + stats ---------- */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
-  .stats{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
-    background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;
-  }
-  .stat{background:var(--paper-2);padding:26px 24px}
-  .stat b{
-    display:block;font-family:var(--serif);font-size:2.4rem;font-weight:700;
-    color:var(--ink);line-height:1;
-  }
-  .stat span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-
-  /* ---------- Cards ---------- */
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .card{
-    background:var(--paper-2);border:1px solid var(--line);border-radius:16px;
-    padding:32px 28px;display:flex;flex-direction:column;
-    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-  }
-  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(16,21,28,.35);border-color:rgba(191,90,36,.35)}
-  .card .tag{
-    font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
-    color:var(--accent);margin-bottom:14px;
-  }
-  .card h3{margin-bottom:.5em}
-  .card p{font-size:.94rem;color:var(--muted);margin-bottom:1.4em}
-  .card .more{
-    margin-top:auto;font-size:.82rem;font-weight:600;letter-spacing:.04em;
-    text-decoration:none;color:var(--ink);border-bottom:1px solid var(--accent-soft);padding-bottom:2px;
-    align-self:flex-start;
-  }
-  .card .more:hover{color:var(--accent)}
-
-  /* ---------- News ---------- */
-  .news{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .news-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-  .news-list li{border-bottom:1px solid var(--line)}
-  .news-list a{
-    display:grid;grid-template-columns:150px 1fr 30px;gap:24px;align-items:baseline;
-    padding:26px 4px;text-decoration:none;transition:padding-left .22s ease;
-  }
-  .news-list a:hover{padding-left:14px}
-  .news-list time{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-  .news-list strong{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);display:block;line-height:1.3}
-  .news-list em{font-style:normal;font-size:.9rem;color:var(--muted)}
-  .news-list .arrow{color:var(--accent);font-size:1.1rem;justify-self:end;transition:transform .22s ease}
-  .news-list a:hover .arrow{transform:translateX(4px)}
-
-  /* ---------- Contact ---------- */
-  .contact{background:var(--ink);color:#c9ced4}
-  .contact h2{color:#fdfbf7}
-  .contact .eyebrow{color:#e0955f}
-  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,72px)}
-  .contact a.mail{
-    font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.9rem);color:#fdfbf7;
-    text-decoration:none;border-bottom:1px solid rgba(224,149,95,.5);
-  }
-  .contact a.mail:hover{color:#e0955f}
-  .info dt{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#8b959f;margin-top:1.4em}
-  .info dd{margin:.25em 0 0;color:#dbe0e5;font-size:.95rem}
-
-  /* ---------- Footer ---------- */
-  footer.site{background:var(--ink);color:#8b959f;padding:26px 0 34px;font-size:.8rem;border-top:1px solid rgba(255,255,255,.1)}
-  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  footer a{color:#b9c1c9;text-decoration:none}
-  footer a:hover{color:#fff}
-
-  /* ---------- Reveal animation (progressive enhancement) ---------- */
-  .js .reveal{opacity:0;transform:translateY(18px)}
-  .js .reveal.in{opacity:1;transform:none;transition:opacity .7s ease, transform .7s ease}
-
-  /* ---------- Responsive ---------- */
-  @media (max-width:900px){
-    .split,.contact-grid{grid-template-columns:1fr}
-    .grid-3{grid-template-columns:1fr}
-  }
-  @media (max-width:760px){
-    .menu-btn{display:block}
-    nav{
-      position:absolute;top:100%;left:0;right:0;
-      background:var(--paper);border-bottom:1px solid var(--line);
-      display:none;padding:12px 24px 20px;
-    }
-    nav.open{display:block}
-    nav ul{flex-direction:column;gap:0}
-    nav li{border-bottom:1px solid var(--line)}
-    nav a{display:block;padding:14px 0;font-size:.95rem}
-    .news-list a{grid-template-columns:1fr;gap:6px}
-    .news-list .arrow{display:none}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;animation:none!important}
-    .js .reveal{opacity:1;transform:none}
-  }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site">
   <div class="wrap nav-bar">
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html">
       <span class="brand-mark">ISA</span>
       <span class="brand-text">Institute of Science &amp; Art<small>Research &amp; Residency</small></span>
     </a>
-
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
     </button>
-
     <nav id="mainNav" aria-label="Main navigation">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#programmes">Research &amp; Art</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="science.html">Science</a></li>
+        <li><a href="art.html">Art</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<div class="hero" id="top">
+<div class="hero">
   <div class="wrap">
     <p class="eyebrow">Est. 2026 &middot; Open call for fellows</p>
     <h1>Where inquiry becomes form.</h1>
@@ -277,13 +45,12 @@
       expression as two movements of the same thought.
     </p>
     <div class="btns">
-      <a class="btn btn-primary" href="#programmes">Explore our work</a>
-      <a class="btn btn-ghost" href="#contact">Apply for a residency</a>
+      <a class="btn btn-primary" href="science.html">Explore Science</a>
+      <a class="btn btn-ghost" href="art.html">Explore Art</a>
     </div>
   </div>
 </div>
 
-<!-- ================= ABOUT ================= -->
 <section id="about">
   <div class="wrap split">
     <div class="reveal">
@@ -300,7 +67,6 @@
         through public lectures, exhibitions and peer-reviewed publications.
       </p>
     </div>
-
     <div class="stats reveal">
       <div class="stat"><b>12</b><span>Research groups</span></div>
       <div class="stat"><b>6</b><span>Studios &amp; labs</span></div>
@@ -310,61 +76,49 @@
   </div>
 </section>
 
-<!-- ================= PROGRAMMES ================= -->
-<section id="programmes" style="background:var(--paper-2);border-top:1px solid var(--line)">
+<section class="section-alt">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Research &amp; Art</p>
-      <h2>Three ways we work.</h2>
-      <p class="lede">Each programme pairs a scientific question with an artistic method, and ends in something the public can see, hear or touch.</p>
+      <p class="eyebrow">Two disciplines, one practice</p>
+      <h2>Science and Art, side by side.</h2>
+      <p class="lede">Each discipline is organised into two branches, so that theory and practice, the public and the private, can each be pursued with full attention.</p>
     </div>
 
-    <div class="grid-3">
-      <article class="card reveal">
-        <span class="tag">Materials</span>
-        <h3>Matter &amp; Light</h3>
+    <div class="grid-2">
+      <a class="path-card reveal" href="science.html">
+        <span class="tag">Science</span>
+        <h3>Theoretical &amp; Experimental</h3>
         <p>
-          Quantum materials, metamaterials and pigment chemistry studied alongside
-          printmakers and glass artists — turning laboratory discovery into objects
-          you can hold.
+          One branch works on paper and in code — models, mathematics, simulation.
+          The other works in the laboratory — materials, instruments, measurement.
+          They meet in weekly seminars and share the same questions.
         </p>
-        <a class="more" href="#contact">Read about the group →</a>
-      </article>
+        <span class="more">Explore Science →</span>
+      </a>
 
-      <article class="card reveal">
-        <span class="tag">Biological design</span>
-        <h3>Living Systems</h3>
+      <a class="path-card reveal" href="art.html">
+        <span class="tag">Art</span>
+        <h3>External &amp; Internal</h3>
         <p>
-          Bio-inspired engineering and ecology meet sculpture and installation.
-          Fellows prototype materials grown rather than manufactured.
+          One branch faces outward — exhibitions, commissions, public programmes.
+          The other stays in the studio — process, experiment, peer critique. Ideas
+          move between them as they mature.
         </p>
-        <a class="more" href="#contact">Read about the group →</a>
-      </article>
-
-      <article class="card reveal">
-        <span class="tag">Sound &amp; perception</span>
-        <h3>Signal &amp; Sense</h3>
-        <p>
-          Psychoacoustics, data sonification and interactive media. We study how
-          humans read signals, and build instruments that let them hear the result.
-        </p>
-        <a class="more" href="#contact">Read about the group →</a>
-      </article>
+        <span class="more">Explore Art →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ================= NEWS ================= -->
-<section class="news" id="news">
+<section>
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">News &amp; Events</p>
-      <h2>What's happening.</h2>
+      <h2>Latest from the Institute.</h2>
     </div>
-
     <ul class="news-list reveal">
       <li>
-        <a href="#contact">
+        <a href="news.html">
           <time datetime="2026-11-14">14 Nov 2026</time>
           <span>
             <strong>Open Studios: Autumn Residency</strong>
@@ -374,7 +128,7 @@
         </a>
       </li>
       <li>
-        <a href="#contact">
+        <a href="news.html">
           <time datetime="2026-10-02">02 Oct 2026</time>
           <span>
             <strong>New publication: Colour from Structure</strong>
@@ -384,7 +138,7 @@
         </a>
       </li>
       <li>
-        <a href="#contact">
+        <a href="news.html">
           <time datetime="2026-09-08">08 Sep 2026</time>
           <span>
             <strong>Fellowship applications now open</strong>
@@ -394,11 +148,13 @@
         </a>
       </li>
     </ul>
+    <div class="btns">
+      <a class="btn btn-dark" href="news.html">Read all news</a>
+    </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section class="contact" id="contact">
+<section class="contact">
   <div class="wrap contact-grid">
     <div class="reveal">
       <p class="eyebrow">Contact</p>
@@ -406,66 +162,25 @@
       <p>We welcome enquiries from researchers, artists, institutions and press.</p>
       <p><a class="mail" href="mailto:hello@institute-science-art.org">hello@institute-science-art.org</a></p>
       <div class="btns">
-        <a class="btn btn-primary" href="mailto:hello@institute-science-art.org?subject=Fellowship%20application">Start an application</a>
+        <a class="btn btn-primary" href="contact.html">Get in touch</a>
       </div>
     </div>
-
     <dl class="info reveal">
       <dt>Address</dt>
       <dd>Institute of Science and Art<br>1 Observatory Lane<br>Your City, 000000</dd>
-
       <dt>Office hours</dt>
       <dd>Monday – Friday, 09:00 – 17:00</dd>
-
-      <dt>Follow</dt>
-      <dd><a href="#" style="color:#dbe0e5">Instagram</a> &middot; <a href="#" style="color:#dbe0e5">GitHub</a> &middot; <a href="#" style="color:#dbe0e5">Newsletter</a></dd>
     </dl>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site">
   <div class="wrap">
-    <span>&copy; <span id="year">2026</span> Institute of Science and Art. All rights reserved.</span>
-    <span>Built as an open, static website.</span>
+    <span>&copy; <span id="year">2026</span> Institute of Science and Art.</span>
+    <span><a href="contact.html">hello@institute-science-art.org</a></span>
   </div>
 </footer>
 
-<script>
-  // Mark JS as available (used for the reveal animation)
-  document.documentElement.classList.add('js');
-
-  // Mobile menu
-  var btn = document.getElementById('menuBtn');
-  var nav = document.getElementById('mainNav');
-  btn.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  nav.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') {
-      nav.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // Current year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Gentle reveal on scroll
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-  }
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
